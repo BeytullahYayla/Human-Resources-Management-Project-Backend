@@ -4,30 +4,37 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.*;
 
+@Table(name="job_seekers")
 @Entity
-@Table(name="jobSeekers")
+
 public class JobSeekers {
 	
 
 	@Id
 	@GeneratedValue
-	@Column(name="JobSeekerId")
-	private int jobSeekerId;
+	@Column(name="job_seeker_id")
+	private int Id;
 	
-	@Column(name="Name")
+	@Column(name="email")
+	private String email;
+
+	
+	@Column(name="name")
 	private String name;
 	
-	@Column(name="NationalIdentityNo")
+	@Column(name="national_identity_no")
 	private String nationalIdentityNo;
 	
-	@Column(name="YearOfBirth")
-	private String yearOfBirth;
-	
-	@Column(name="Email")
-	private String email;
-	
-	@Column(name="Surname")
+	@Column(name="surname")
 	private String surname;
+	
+	
+	
+	@Column(name="year_of_birth")
+	private int yearOfBirth;
+	
+		
+	
 	
 	/**
 	 * @param jobSeekerId
@@ -37,24 +44,24 @@ public class JobSeekers {
 	 * @param email
 	 * @param surname
 	 */
-	public JobSeekers(int jobSeekerId, String name, String nationalIdentityNo, String yearOfBirth, String email,
-			String surname) {
+	public JobSeekers(int jobSeekerId, String name,String surname ,String nationalIdentityNo, int yearOfBirth, String email) {
 		super();
-		this.jobSeekerId = jobSeekerId;
+		this.Id = jobSeekerId;
+		this.surname = surname;
 		this.name = name;
 		this.nationalIdentityNo = nationalIdentityNo;
 		this.yearOfBirth = yearOfBirth;
 		this.email = email;
-		this.surname = surname;
+		
 	}
 	public JobSeekers() {
 		
 	}
 	public int getJobSeekerId() {
-		return jobSeekerId;
+		return Id;
 	}
 	public void setJobSeekerId(int jobSeekerId) {
-		this.jobSeekerId = jobSeekerId;
+		this.Id = jobSeekerId;
 	}
 	public String getName() {
 		return name;
@@ -68,10 +75,10 @@ public class JobSeekers {
 	public void setNationalIdentityNo(String nationalIdentityNo) {
 		this.nationalIdentityNo = nationalIdentityNo;
 	}
-	public String getYearOfBirth() {
+	public int getYearOfBirth() {
 		return yearOfBirth;
 	}
-	public void setYearOfBirth(String yearOfBirth) {
+	public void setYearOfBirth(int yearOfBirth) {
 		this.yearOfBirth = yearOfBirth;
 	}
 	public String getEmail() {

@@ -2,6 +2,7 @@ package Beytullah.hrms.business.concretes;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import Beytullah.hrms.core.utilities.results.SuccessResult;
 import Beytullah.hrms.dataAccess.abstracts.PositionsDao;
 import Beytullah.hrms.entities.concretes.Positions;
 import Beytullah.hrms.*;
+
 @Service
 public class PositionManager implements PositionService {
 
@@ -38,5 +40,9 @@ public class PositionManager implements PositionService {
 		this.positionsDao.save(position);
 		return new SuccessResult("Position Saved Successfully");
 	}
+
+
+
+	
 
 }

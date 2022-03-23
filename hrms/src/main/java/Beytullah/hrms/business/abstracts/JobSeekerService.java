@@ -9,5 +9,6 @@ public interface JobSeekerService {
 	
 	DataResult<List<JobSeekers>> getAll();
 	Result add(JobSeekers jobSeeker);
-
+	DataResult<JobSeekers> getByNationalIdentityNo(String nationalIdentityNo);
+	DataResult<JobSeekers> getByEmail(String email);
 }

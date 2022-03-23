@@ -10,5 +10,6 @@ public interface PositionService {
 	
 	DataResult<List<Positions>> getAll();
 	Result add(Positions position);
+	
 
 }
