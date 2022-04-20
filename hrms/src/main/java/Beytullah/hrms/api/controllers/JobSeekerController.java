@@ -27,6 +27,7 @@ public class JobSeekerController {
 		this.jobSeekerService = jobSeekerService;
 	}
 
+
 	@GetMapping("/getAll")
 	public DataResult<List<JobSeekers>> getAll() {
 		
