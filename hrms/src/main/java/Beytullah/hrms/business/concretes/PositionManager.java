@@ -42,6 +42,11 @@ public class PositionManager implements PositionService {
 	}
 
 
+	private boolean checkPositionNameExists(Positions position){
+
+	}
+
+
 
 	
 
