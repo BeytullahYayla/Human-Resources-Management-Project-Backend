@@ -3,14 +3,11 @@ package Beytullah.hrms.business.concretes;
 import java.util.List;
 
 
+import Beytullah.hrms.core.utilities.results.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import Beytullah.hrms.business.abstracts.PositionService;
-import Beytullah.hrms.core.utilities.results.DataResult;
-import Beytullah.hrms.core.utilities.results.Result;
-import Beytullah.hrms.core.utilities.results.SuccessDataResult;
-import Beytullah.hrms.core.utilities.results.SuccessResult;
 import Beytullah.hrms.dataAccess.abstracts.PositionsDao;
 import Beytullah.hrms.entities.concretes.Positions;
 import Beytullah.hrms.*;
@@ -37,12 +34,28 @@ public class PositionManager implements PositionService {
 	@Override
 	public Result add(Positions position) {
 		// TODO Auto-generated method stub
-		this.positionsDao.save(position);
-		return new SuccessResult("Position Saved Successfully");
+		if (!checkIfPositionNameExists(position)){
+			this.positionsDao.save(position);
+			return new SuccessResult("Position Saved Successfully");
+		}
+		return new ErrorResult("Something went wrong!! Position Name already exists");
+
+
+
+
+
 	}
 
 
-	private boolean checkPositionNameExists(Positions position){
+	private boolean checkIfPositionNameExists(Positions position){
+		if (positionsDao.findByPositionName(position.getPositionName())!=null) {
+			return true;
+
+
+		}
+		else{
+			return false;
+		}
 
 	}
 
