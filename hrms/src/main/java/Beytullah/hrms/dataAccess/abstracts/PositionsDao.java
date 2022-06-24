@@ -1,12 +1,10 @@
 package Beytullah.hrms.dataAccess.abstracts;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import Beytullah.hrms.entities.concretes.Positions;
+import Beytullah.hrms.entities.concretes.Position;
 
-public interface PositionsDao extends JpaRepository<Positions,Integer> {//JpaRepository includes CRUD operations and more 
+public interface PositionsDao extends JpaRepository<Position,Integer> {//JpaRepository includes CRUD operations and more
 
-	Positions findByPositionName(String positionName);
+	Position findByPositionName(String positionName);
 }

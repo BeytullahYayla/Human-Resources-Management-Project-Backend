@@ -4,12 +4,12 @@ import java.util.List;
 
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.Result;
-import Beytullah.hrms.entities.concretes.Positions;
+import Beytullah.hrms.entities.concretes.Position;
 
 public interface PositionService {
 	
-	DataResult<List<Positions>> getAll();
-	Result add(Positions position);
+	DataResult<List<Position>> getAll();
+	Result add(Position position);
 	
 
 }

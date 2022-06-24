@@ -9,8 +9,7 @@ import org.springframework.stereotype.Service;
 
 import Beytullah.hrms.business.abstracts.PositionService;
 import Beytullah.hrms.dataAccess.abstracts.PositionsDao;
-import Beytullah.hrms.entities.concretes.Positions;
-import Beytullah.hrms.*;
+import Beytullah.hrms.entities.concretes.Position;
 
 @Service
 public class PositionManager implements PositionService {
@@ -24,15 +23,15 @@ public class PositionManager implements PositionService {
 	
 	
 	
-	public DataResult<List<Positions>> getAll() {
+	public DataResult<List<Position>> getAll() {
 		
-		return new SuccessDataResult<List<Positions>>(this.positionsDao.findAll(),"Positions Listed");
+		return new SuccessDataResult<List<Position>>(this.positionsDao.findAll(),"Positions Listed");
 	}
 
 
 
 	@Override
-	public Result add(Positions position) {
+	public Result add(Position position) {
 		// TODO Auto-generated method stub
 		if (!checkIfPositionNameExists(position)){
 			this.positionsDao.save(position);
@@ -47,7 +46,7 @@ public class PositionManager implements PositionService {
 	}
 
 
-	private boolean checkIfPositionNameExists(Positions position){
+	private boolean checkIfPositionNameExists(Position position){
 		if (positionsDao.findByPositionName(position.getPositionName())!=null) {
 			return true;
 

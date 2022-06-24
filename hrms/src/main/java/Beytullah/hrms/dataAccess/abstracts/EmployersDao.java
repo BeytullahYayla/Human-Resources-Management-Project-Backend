@@ -1,13 +1,10 @@
 package Beytullah.hrms.dataAccess.abstracts;
 
-import Beytullah.hrms.entities.concretes.Employers;
+import Beytullah.hrms.entities.concretes.Employer;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
-import java.util.List;
-
-public interface EmployersDao extends JpaRepository<Employers,Integer> {
-    Employers findByEmail(String email);
+public interface EmployersDao extends JpaRepository<Employer,Integer> {
+    Employer findByEmail(String email);
 
 
 

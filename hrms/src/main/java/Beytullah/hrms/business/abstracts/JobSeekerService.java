@@ -4,11 +4,11 @@ import java.util.List;
 
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.Result;
-import Beytullah.hrms.entities.concretes.JobSeekers;
+import Beytullah.hrms.entities.concretes.JobSeeker;
 public interface JobSeekerService {
 	
-	DataResult<List<JobSeekers>> getAll();
-	Result add(JobSeekers jobSeeker);
-	DataResult<JobSeekers> getByNationalIdentityNo(String nationalIdentityNo);
-	DataResult<JobSeekers> getByEmail(String email);
+	DataResult<List<JobSeeker>> getAll();
+	Result add(JobSeeker jobSeeker);
+	DataResult<JobSeeker> getByNationalIdentityNo(String nationalIdentityNo);
+	DataResult<JobSeeker> getByEmail(String email);
 }

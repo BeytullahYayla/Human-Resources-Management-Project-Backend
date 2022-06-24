@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import Beytullah.hrms.business.abstracts.JobSeekerService;
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.Result;
-import Beytullah.hrms.entities.concretes.JobSeekers;
+import Beytullah.hrms.entities.concretes.JobSeeker;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
@@ -28,17 +28,17 @@ public class JobSeekerController {
 	}
 
 	@GetMapping("/getAll")
-	public DataResult<List<JobSeekers>> getAll() {
+	public DataResult<List<JobSeeker>> getAll() {
 		
 		return this.jobSeekerService.getAll();
 		
 	}
 	@GetMapping("/getByNationalIdentityNumber")
-	public DataResult<JobSeekers> getByNationalIdentityNumber(String nationalIdentityNumber){
+	public DataResult<JobSeeker> getByNationalIdentityNumber(String nationalIdentityNumber){
 		return this.jobSeekerService.getByNationalIdentityNo(nationalIdentityNumber);
 	}
 	@PostMapping("/add")
-	public Result addSeeker(@RequestBody JobSeekers jobSeeker) {
+	public Result addSeeker(@RequestBody JobSeeker jobSeeker) {
 		return this.jobSeekerService.add(jobSeeker);
 	}
 	

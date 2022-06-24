@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Table(name="job_seekers")
 @Entity
 
-public class JobSeekers {
+public class JobSeeker {
 	
 
 	@Id
@@ -44,7 +44,7 @@ public class JobSeekers {
 	 * @param email
 	 * @param surname
 	 */
-	public JobSeekers(int jobSeekerId, String name,String surname ,String nationalIdentityNo, int yearOfBirth, String email) {
+	public JobSeeker(int jobSeekerId, String name, String surname , String nationalIdentityNo, int yearOfBirth, String email) {
 		super();
 		this.Id = jobSeekerId;
 		this.surname = surname;
@@ -54,7 +54,7 @@ public class JobSeekers {
 		this.email = email;
 		
 	}
-	public JobSeekers() {
+	public JobSeeker() {
 		
 	}
 	public int getJobSeekerId() {

@@ -12,7 +12,7 @@ import Beytullah.hrms.core.utilities.results.Result;
 import Beytullah.hrms.core.utilities.results.SuccessDataResult;
 import Beytullah.hrms.core.utilities.results.SuccessResult;
 import Beytullah.hrms.dataAccess.abstracts.JobSeekersDao;
-import Beytullah.hrms.entities.concretes.JobSeekers;
+import Beytullah.hrms.entities.concretes.JobSeeker;
 
 @Service
 public class JobSeekerManager implements JobSeekerService {
@@ -25,13 +25,13 @@ public class JobSeekerManager implements JobSeekerService {
 
 	//Mernis validation 
 	
-	public DataResult<List<JobSeekers>> getAll() {
+	public DataResult<List<JobSeeker>> getAll() {
 		
-		return new SuccessDataResult<List<JobSeekers>>(this.jobSeekersDao.findAll(),"Job Seekers Listed Successfully");
+		return new SuccessDataResult<List<JobSeeker>>(this.jobSeekersDao.findAll(),"Job Seekers Listed Successfully");
 	}
 
 	@Override
-	public Result add(JobSeekers jobSeeker) {
+	public Result add(JobSeeker jobSeeker) {
 		if(checkIfIdentityNumberExists(jobSeeker.getNationalIdentityNo())|| checkIfEmailExists(jobSeeker.getEmail())) {
 			return new ErrorResult("Identity Number or Email Already Exists....\n Please Try Again");
 		}
@@ -40,17 +40,17 @@ public class JobSeekerManager implements JobSeekerService {
 	}
 
 	@Override
-	public DataResult<JobSeekers> getByNationalIdentityNo(String nationalIdentityNo) {
+	public DataResult<JobSeeker> getByNationalIdentityNo(String nationalIdentityNo) {
 		// TODO Auto-generated method stub
-		return new SuccessDataResult<JobSeekers>(this.jobSeekersDao.findByNationalIdentityNo(nationalIdentityNo));
+		return new SuccessDataResult<JobSeeker>(this.jobSeekersDao.findByNationalIdentityNo(nationalIdentityNo));
 	}
 	
 	
 
 	@Override
-	public DataResult<JobSeekers> getByEmail(String email) {
+	public DataResult<JobSeeker> getByEmail(String email) {
 		// TODO Auto-generated method stub
-		return new SuccessDataResult<JobSeekers>(this.jobSeekersDao.findByEmail(email));
+		return new SuccessDataResult<JobSeeker>(this.jobSeekersDao.findByEmail(email));
 	}
 	private boolean checkIfIdentityNumberExists(String IdentityNumber) {
 		if(this.jobSeekersDao.findByNationalIdentityNo(IdentityNumber)!=null) {

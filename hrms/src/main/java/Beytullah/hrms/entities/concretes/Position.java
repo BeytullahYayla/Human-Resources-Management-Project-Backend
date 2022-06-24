@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.*;
 @Entity
 @Table(name="positions")
-public class Positions {
+public class Position {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -20,12 +20,12 @@ public class Positions {
 	 */
 	
 	
-	public Positions(int positionId, String positionName) {
+	public Position(int positionId, String positionName) {
 		super();
 		this.positionId = positionId;
 		this.positionName = positionName;
 	}
-	public Positions() {}
+	public Position() {}
 	public int getPositionId() {
 		return positionId;
 	}

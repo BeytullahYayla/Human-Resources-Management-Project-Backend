@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "employers")
-public class Employers {
+public class Employer {
 
 
     public int getEmployerId() {

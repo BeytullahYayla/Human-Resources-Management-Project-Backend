@@ -3,7 +3,7 @@ package Beytullah.hrms.business.concretes;
 import Beytullah.hrms.business.abstracts.EmployerService;
 import Beytullah.hrms.core.utilities.results.*;
 import Beytullah.hrms.dataAccess.abstracts.EmployersDao;
-import Beytullah.hrms.entities.concretes.Employers;
+import Beytullah.hrms.entities.concretes.Employer;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -15,21 +15,21 @@ public class EmployerManager implements EmployerService {
         this.employerDao=employerDao;
     }
     @Override
-    public DataResult<List<Employers>> listAll() {
+    public DataResult<List<Employer>> listAll() {
 
-        return new SuccessDataResult<List<Employers>>(this.employerDao.findAll());
+        return new SuccessDataResult<List<Employer>>(this.employerDao.findAll());
 
 
     }
 
     @Override
-    public DataResult<List<Employers>> getAllWithPagination(int pageNumber, int pageSize) {
+    public DataResult<List<Employer>> getAllWithPagination(int pageNumber, int pageSize) {
         Pageable pageable= PageRequest.of(pageNumber, pageSize);
         return new SuccessDataResult<>(this.employerDao.findAll(pageable).getContent());
     }
 
     @Override
-    public Result add(Employers employer) {
+    public Result add(Employer employer) {
         if(checkIfEmailExists(employer) && hrmsValidation(employer)){
             employerDao.save(employer);
             return new SuccessResult("Employer Added Successfully");
@@ -41,14 +41,14 @@ public class EmployerManager implements EmployerService {
 
 
 
-    private boolean checkIfEmailExists(Employers employer){
+    private boolean checkIfEmailExists(Employer employer){
         if(this.employerDao.findByEmail(employer.getEmail())!=null){
             return false;
         }
         return true;
 
     }
-    private boolean hrmsValidation(Employers employer){
+    private boolean hrmsValidation(Employer employer){
         return true;//Just returns true for now
     }
 }
