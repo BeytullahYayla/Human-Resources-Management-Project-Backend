@@ -25,4 +25,8 @@ public class EmployerController {
         return this.employerService.add(employer);
 
     }
+    @GetMapping("/getAllByPage")
+    public DataResult<List<Employers>> getAllByPage(int pageNumber,int pageSize){
+        return this.employerService.getAllWithPagination(pageNumber, pageSize);
+    }
 }

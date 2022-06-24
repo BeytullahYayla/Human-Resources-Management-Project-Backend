@@ -5,7 +5,8 @@ import Beytullah.hrms.core.utilities.results.*;
 import Beytullah.hrms.dataAccess.abstracts.EmployersDao;
 import Beytullah.hrms.entities.concretes.Employers;
 import org.springframework.stereotype.Service;
-
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import java.util.List;
 @Service
 public class EmployerManager implements EmployerService {
@@ -19,6 +20,12 @@ public class EmployerManager implements EmployerService {
         return new SuccessDataResult<List<Employers>>(this.employerDao.findAll());
 
 
+    }
+
+    @Override
+    public DataResult<List<Employers>> getAllWithPagination(int pageNumber, int pageSize) {
+        Pageable pageable= PageRequest.of(pageNumber, pageSize);
+        return new SuccessDataResult<>(this.employerDao.findAll(pageable).getContent());
     }
 
     @Override
@@ -36,9 +43,9 @@ public class EmployerManager implements EmployerService {
 
     private boolean checkIfEmailExists(Employers employer){
         if(this.employerDao.findByEmail(employer.getEmail())!=null){
-            return true;
+            return false;
         }
-        return false;
+        return true;
 
     }
     private boolean hrmsValidation(Employers employer){

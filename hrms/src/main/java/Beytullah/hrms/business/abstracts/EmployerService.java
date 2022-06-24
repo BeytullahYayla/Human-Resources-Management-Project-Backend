@@ -8,5 +8,7 @@ import java.util.List;
 
 public interface EmployerService {
     DataResult<List<Employers>> listAll();
+
+    DataResult<List<Employers>> getAllWithPagination(int pageNumber,int pageSize);
     Result add(Employers employer);
 }
