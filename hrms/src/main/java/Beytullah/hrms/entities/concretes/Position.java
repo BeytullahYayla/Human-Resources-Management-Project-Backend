@@ -2,6 +2,8 @@ package Beytullah.hrms.entities.concretes;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
+import java.util.List;
+
 @Entity
 @Table(name="positions")
 public class Position {
@@ -13,6 +15,10 @@ public class Position {
 	
 	@Column(name="position_name")
 	private String positionName;
+
+	@OneToMany(mappedBy = "position")
+	private List<JobAdvertisement> jobAdvertisementList;
+
 
 	/**
 	 * @param positionId
@@ -40,6 +46,7 @@ public class Position {
 	public void setPositionName(String positionName) {
 		this.positionName=positionName;
 	}
+
 	
 
 }

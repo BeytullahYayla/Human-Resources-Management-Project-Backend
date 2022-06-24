@@ -12,8 +12,10 @@ public class JobAdvertisement {
     private int jobAdvertisementId;
 
 
-    @Column(name = "employer_id")
-    private int employerId;
+    @ManyToOne
+    @JoinColumn(name = "employer_id")
+    private Employer employer;
+
 
 
     @Column(name = "job_description")
@@ -21,8 +23,9 @@ public class JobAdvertisement {
 
 
 
-    @Column(name = "position_id")
-    private int positionId;
+    @ManyToOne
+    @JoinColumn(name = "position_id")
+    private Position position;
 
 
 
@@ -43,20 +46,7 @@ public class JobAdvertisement {
         this.jobAdvertisementId = jobAdvertisementId;
     }
 
-    public int getEmployerId() {
-        return employerId;
-    }
 
-    public void setEmployerId(int employerId) {
-        this.employerId = employerId;
-    }
-    public int getPositionId() {
-        return positionId;
-    }
-
-    public void setPositionId(int positionId) {
-        this.positionId = positionId;
-    }
 
     public int getRequiredPositionCount() {
         return requiredPositionCount;

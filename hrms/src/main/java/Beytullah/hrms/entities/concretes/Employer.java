@@ -1,6 +1,7 @@
 package Beytullah.hrms.entities.concretes;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "employers")
@@ -16,7 +17,7 @@ public class Employer {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="employer_id")
     private int employerId;
 
@@ -79,6 +80,9 @@ public class Employer {
 
     @Column(name = "password")
     private String password;
+
+    @OneToMany(mappedBy = "employer")
+    private List<JobAdvertisement> jobAdvertisements;
 
 
 
