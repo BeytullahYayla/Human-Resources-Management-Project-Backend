@@ -33,4 +33,10 @@ public class JobAdvertisementManager implements JobAdvertisementService {
         this.jobAdvertisementDao.save(jobAdvertisement);
         return new SuccessResult("Job Advertisement Saved Successfully");
     }
+
+    @Override
+    public DataResult<List<JobAdvertisementDto>> getAdvertisementDto() {
+
+        return new SuccessDataResult<List<JobAdvertisementDto>>(this.jobAdvertisementDao.getJobAdvertisementDetails(),"Details Listed Successfully");
+    }
 }

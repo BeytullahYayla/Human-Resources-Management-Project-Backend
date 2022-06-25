@@ -29,4 +29,9 @@ public class JobAdvertisementController {
     public Result add(@RequestBody JobAdvertisement jobAdvertisement){
         return this.jobAdvertisementService.add(jobAdvertisement);
     }
+    @GetMapping("/getDetails")
+    public DataResult<List<JobAdvertisementDto>> getDetails(){
+        return this.jobAdvertisementService.getAdvertisementDto();
+    }
+
 }

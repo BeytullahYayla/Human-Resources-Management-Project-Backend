@@ -11,4 +11,5 @@ import java.util.List;
 public interface JobAdvertisementService {
     DataResult<List<JobAdvertisement>> getAll();
     Result add(JobAdvertisement jobAdvertisement);
+    DataResult<List<JobAdvertisementDto>> getAdvertisementDto();
 }

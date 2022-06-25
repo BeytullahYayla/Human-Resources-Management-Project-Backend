@@ -1,6 +1,10 @@
 package Beytullah.hrms.entities.concretes;
 
 import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -8,6 +12,10 @@ import java.util.Date;
 
 @Entity
 @Table(name = "job_advertisement")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class JobAdvertisement {
 
     @Id
@@ -62,6 +70,21 @@ public class JobAdvertisement {
     @Column(name="application_deadline")
     @NotNull
     private Date applicationDeadline;
+
+
+
+    @Column(name="is_active")
+    @NotNull
+    private boolean isActive;
+    /*
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
 
     public double getMinSalary() {
         return minSalary;
@@ -132,5 +155,5 @@ public class JobAdvertisement {
     public void setEmployer(Employer employer) {
         this.employer = employer;
     }
-
+*/
 }
