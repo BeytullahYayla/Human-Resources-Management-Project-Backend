@@ -2,7 +2,6 @@ package Beytullah.hrms.business.abstracts;
 
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.Result;
-import Beytullah.hrms.core.utilities.results.SuccessDataResult;
 import Beytullah.hrms.dto.JobAdvertisementDto;
 import Beytullah.hrms.entities.concretes.JobAdvertisement;
 

@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface JobAdvertisementDao extends JpaRepository<JobAdvertisement,Integer> {
-    @Query("SELECT new Beytullah.hrms.dto.JobAdvertisementDto(e.companyName , j.requiredPositionCount,j.createdAt,j.applicationDeadline) FROM Employer e JOIN e.employerId j")
+    @Query("SELECT new Beytullah.hrms.dto.JobAdvertisementDto(e.companyName,j.requiredPositionCount,j.createdAt,j.applicationDeadline) FROM Employer e Inner Join e.jobAdvertisements j")
     public List<JobAdvertisementDto> getJobAdvertisementDetails();
 
 }
