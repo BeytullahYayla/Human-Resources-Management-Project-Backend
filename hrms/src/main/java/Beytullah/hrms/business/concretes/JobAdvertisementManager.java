@@ -10,6 +10,7 @@ import Beytullah.hrms.dto.JobAdvertisementDto;
 import Beytullah.hrms.entities.concretes.JobAdvertisement;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -38,6 +39,16 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     public DataResult<List<JobAdvertisementDto>> getAdvertisementDto() {
 
         return new SuccessDataResult<List<JobAdvertisementDto>>(this.jobAdvertisementDao.getJobAdvertisementDetails(),"Details Listed Successfully");
+    }
+
+    @Override
+    public DataResult<List<JobAdvertisementDto>> getAdvertisementDtoByDate(Date date) {
+        return new SuccessDataResult<List<JobAdvertisementDto>>(this.jobAdvertisementDao.getJobAdvertisementsByDate(date));
+    }
+
+    @Override
+    public DataResult<List<JobAdvertisementDto>> getAdvertisementDtoByCompanyName(String companyName) {
+        return new SuccessDataResult<List<JobAdvertisementDto>>(this.jobAdvertisementDao.getByCompanyName(companyName),"Data Fetched Successfully By Company Name");
     }
 
 

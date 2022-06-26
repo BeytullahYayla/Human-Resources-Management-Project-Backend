@@ -11,6 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class JobAdvertisementDto {
     private String companyName;
+    private String positionName;
     private int requiredPositionCount;
     private Date createdAt;
     private Date applicationDeadline;
