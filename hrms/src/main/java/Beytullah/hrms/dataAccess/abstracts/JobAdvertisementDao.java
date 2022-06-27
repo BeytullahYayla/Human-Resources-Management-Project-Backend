@@ -22,6 +22,10 @@ public interface JobAdvertisementDao extends JpaRepository<JobAdvertisement,Inte
             "FROM  Employer e Inner Join e.jobAdvertisements j Inner Join j.position p where e.companyName=:companyName")
     public List<JobAdvertisementDto> getByCompanyName(String companyName);
 
+    @Query("SELECT new Beytullah.hrms.dto.JobAdvertisementDto(e.companyName,p.positionName,j.requiredPositionCount,j.createdAt,j.applicationDeadline)"+
+            "FROM  Employer e Inner Join e.jobAdvertisements j Inner Join j.position p where j.isActive=:true")
+    public List<JobAdvertisementDto> getActiveJobAdvertisements();
+
 
 
 

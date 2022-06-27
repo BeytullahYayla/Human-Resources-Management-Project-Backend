@@ -15,4 +15,6 @@ public interface JobAdvertisementService {
 
     DataResult<List<JobAdvertisementDto>> getAdvertisementDtoByDate(Date date);
     DataResult<List<JobAdvertisementDto>> getAdvertisementDtoByCompanyName(String companyName);
+
+    DataResult<List<JobAdvertisementDto>> getActiveAdvertisements();
 }

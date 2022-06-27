@@ -47,6 +47,11 @@ public class JobAdvertisementController {
         return this.jobAdvertisementService.getAdvertisementDtoByCompanyName(companyName);
 
     }
+    @GetMapping("/getActiveJobAdvertisements")
+    public DataResult<List<JobAdvertisementDto>> getActiveJobAdvertisements(){
+        return this.jobAdvertisementService.getActiveAdvertisements();
+
+    }
 
 
 }

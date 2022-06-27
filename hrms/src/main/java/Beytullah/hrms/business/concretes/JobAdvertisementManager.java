@@ -51,5 +51,10 @@ public class JobAdvertisementManager implements JobAdvertisementService {
         return new SuccessDataResult<List<JobAdvertisementDto>>(this.jobAdvertisementDao.getByCompanyName(companyName),"Data Fetched Successfully By Company Name");
     }
 
+    @Override
+    public DataResult<List<JobAdvertisementDto>> getActiveAdvertisements() {
+        return new SuccessDataResult<List<JobAdvertisementDto>>(this.jobAdvertisementDao.getActiveJobAdvertisements());
+    }
+
 
 }
