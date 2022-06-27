@@ -17,4 +17,6 @@ public interface JobAdvertisementService {
     DataResult<List<JobAdvertisementDto>> getAdvertisementDtoByCompanyName(String companyName);
 
     DataResult<List<JobAdvertisementDto>> getActiveAdvertisements();
+
+    Result changeIsActive(int id);
 }

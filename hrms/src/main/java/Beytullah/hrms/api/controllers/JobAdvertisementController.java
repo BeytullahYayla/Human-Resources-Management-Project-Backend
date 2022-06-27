@@ -53,5 +53,11 @@ public class JobAdvertisementController {
 
     }
 
+    @PostMapping("/changeActivityStatus")
+    public Result changeActivityStatus(int id){
+        return this.jobAdvertisementService.changeIsActive(id);
+
+    }
+
 
 }

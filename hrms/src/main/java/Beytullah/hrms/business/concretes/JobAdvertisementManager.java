@@ -56,5 +56,11 @@ public class JobAdvertisementManager implements JobAdvertisementService {
         return new SuccessDataResult<List<JobAdvertisementDto>>(this.jobAdvertisementDao.getActiveJobAdvertisements());
     }
 
+    @Override
+    public Result changeIsActive( int id) {
+        this.jobAdvertisementDao.changeIsActive(id);
+        return new SuccessResult("Changed Activity Status Successfully");
+    }
+
 
 }
