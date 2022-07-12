@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "applicant_college")
+@Table(name = "applicant_colleges")
 public class ApplicantCollege {
 
     @Id
@@ -30,7 +30,7 @@ public class ApplicantCollege {
     @Column(name = "ending_year")
     private int endingYear;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(referencedColumnName = "cv_id")
     private ApplicantCv applicantCv;
 

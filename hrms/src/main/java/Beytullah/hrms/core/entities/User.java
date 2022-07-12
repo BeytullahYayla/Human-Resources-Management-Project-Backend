@@ -11,9 +11,10 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "Users")
+@Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,9 +29,6 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "applicant_id", referencedColumnName = "applicant_id")
-    private Applicant applicant;
 
 
 }

@@ -22,4 +22,8 @@ public class ApplicantCvWebsite {
 
     @Column(name ="linkedin")
     private String linkedinUrl;
+
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "cv_id")
+    private ApplicantCv applicantCv;
 }

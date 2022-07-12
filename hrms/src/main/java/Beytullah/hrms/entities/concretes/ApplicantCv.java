@@ -25,7 +25,7 @@ public class ApplicantCv {
 
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "applicant_id",referencedColumnName = "user_id")
+    @JoinColumn(name = "Id",referencedColumnName = "Id")
     private Applicant applicant;
 
     @OneToMany(mappedBy ="applicantCv")
@@ -42,6 +42,9 @@ public class ApplicantCv {
 
     @OneToMany(mappedBy = "applicantCv")
     private List<ApplicantCvSkills> applicantCvSkills;
+
+    @OneToMany(mappedBy = "applicantCv")
+    private List<ApplicantCvWebsite> applicantCvWebsites;
 
 
 

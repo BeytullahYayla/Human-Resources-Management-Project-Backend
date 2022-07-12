@@ -1,16 +1,23 @@
 package Beytullah.hrms.entities.concretes;
 
 import Beytullah.hrms.core.entities.User;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@Data
 @Entity
-@NoArgsConstructor
+@Table(name = "applicants")
 @AllArgsConstructor
-@Table(name = "applicant")
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = false)
+@PrimaryKeyJoinColumn(name="user_id", referencedColumnName = "Id")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","applicantCv"})
 public class Applicant extends User {
 
     /*
@@ -36,8 +43,7 @@ public class Applicant extends User {
 
     //@NotNull
     //@Past
-    @Column(name = "date_of_birth")
-    private LocalDate dateOfBirth;
+
 
     @OneToOne(mappedBy = "applicant")
     private ApplicantCv applicantCv;

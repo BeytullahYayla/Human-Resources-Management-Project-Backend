@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="applicant_image")
+@Table(name="applicant_images")
 public class ApplicantImage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +20,7 @@ public class ApplicantImage {
     @Column(name = "url")
     private String url;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(referencedColumnName = "cv_id")
     private ApplicantCv applicantCv;
 
