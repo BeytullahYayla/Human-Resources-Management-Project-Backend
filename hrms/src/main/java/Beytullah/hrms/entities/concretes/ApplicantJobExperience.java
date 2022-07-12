@@ -11,8 +11,8 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="job_experience")
-public class JobExperience {
+@Table(name="applicant_job_experience")
+public class ApplicantJobExperience {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "job_experience_id")
@@ -29,4 +29,8 @@ public class JobExperience {
 
     @Column(name = "ending_year")
     private int endingYear;
+
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "cv_id")
+    private ApplicantCv applicantCv;
 }

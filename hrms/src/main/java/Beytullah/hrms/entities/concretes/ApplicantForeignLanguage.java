@@ -11,8 +11,8 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "foreign_language")
-public class ForeignLanguage {
+@Table(name = "applicant_foreign_language")
+public class ApplicantForeignLanguage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "foreign_lang_name")
@@ -20,4 +20,8 @@ public class ForeignLanguage {
 
     @Column(name="level")
     private int level;
+
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "cv_id")
+    private ApplicantCv applicantCv;
 }

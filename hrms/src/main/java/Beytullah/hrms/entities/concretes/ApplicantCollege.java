@@ -10,8 +10,8 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "college")
-public class College {
+@Table(name = "applicant_college")
+public class ApplicantCollege {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +29,11 @@ public class College {
 
     @Column(name = "ending_year")
     private int endingYear;
+
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "cv_id")
+    private ApplicantCv applicantCv;
+
 
 
 }
