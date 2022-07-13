@@ -23,7 +23,7 @@ public class ApplicantCvSkills {
     @Column(name = "name")
     private String name;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(referencedColumnName = "cv_id")
     private ApplicantCv applicantCv;
 

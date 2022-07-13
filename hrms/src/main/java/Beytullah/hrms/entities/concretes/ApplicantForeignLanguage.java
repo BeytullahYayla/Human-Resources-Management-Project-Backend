@@ -21,7 +21,7 @@ public class ApplicantForeignLanguage {
     @Column(name="level")
     private int level;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(referencedColumnName = "cv_id")
     private ApplicantCv applicantCv;
 }

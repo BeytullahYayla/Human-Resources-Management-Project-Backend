@@ -30,7 +30,7 @@ public class ApplicantJobExperience {
     @Column(name = "ending_year")
     private int endingYear;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(referencedColumnName = "cv_id")
     private ApplicantCv applicantCv;
 }
