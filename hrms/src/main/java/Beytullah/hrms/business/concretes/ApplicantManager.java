@@ -3,8 +3,6 @@ package Beytullah.hrms.business.concretes;
 import Beytullah.hrms.business.abstracts.ApplicantService;
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.SuccessDataResult;
-import Beytullah.hrms.dataAccess.abstracts.ApplicantDao;
-import Beytullah.hrms.entities.concretes.Applicant;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

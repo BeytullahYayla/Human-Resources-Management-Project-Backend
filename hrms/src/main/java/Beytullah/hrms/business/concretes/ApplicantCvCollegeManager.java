@@ -5,8 +5,6 @@ import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.Result;
 import Beytullah.hrms.core.utilities.results.SuccessDataResult;
 import Beytullah.hrms.core.utilities.results.SuccessResult;
-import Beytullah.hrms.dataAccess.abstracts.ApplicantCvCollegeDao;
-import Beytullah.hrms.entities.concretes.ApplicantCollege;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
