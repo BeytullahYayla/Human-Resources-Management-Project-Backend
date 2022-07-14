@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 
 @Data
@@ -29,6 +30,7 @@ public class User {
 
     @NotBlank
     @Column(name = "password")
+    @Size(min = 9,max = 50)
     private String password;
 
 

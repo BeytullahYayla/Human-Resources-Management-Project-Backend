@@ -15,7 +15,7 @@ public class CandidateCv {
     private int candidateCvId;
 
 
-    @ManyToMany(mappedBy = "foreignLanguages")
+    @OneToMany(mappedBy = "candidateCv")
     List<CandidateForeignLanguage> candidateForeignLanguages;
 
     @Column(name = "cover_letter")

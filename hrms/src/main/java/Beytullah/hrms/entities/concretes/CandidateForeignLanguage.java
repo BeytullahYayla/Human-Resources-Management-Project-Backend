@@ -18,17 +18,16 @@ public class CandidateForeignLanguage {
     @Column(name = "candidate_foreign_lang_id")
     private int candidateForeignLangId;
 
-    @Column(name = "candidate_foreign_lang_name")
-    private String candidateForeignLanguageName;
-
     @Column(name = "level")
     private int level;
 
-    @ManyToMany
-    @JoinTable(name = "foreign_languages",
-            joinColumns = @JoinColumn(name = "candidate_foreign_lang_id"),
-            inverseJoinColumns = @JoinColumn(name = "candidate_cv_id"))
-    List<CandidateForeignLanguage> foreignLanguages;
+    @ManyToOne()
+            @JoinColumn(name = "candidate_cv_id")
+    CandidateCv candidateCv;
+
+    @ManyToOne()
+            @JoinColumn(name = "foreign_lang_id")
+    ForeignLanguage foreignLanguage;
 
 
 
