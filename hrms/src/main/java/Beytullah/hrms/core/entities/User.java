@@ -4,9 +4,9 @@ import Beytullah.hrms.entities.concretes.Applicant;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.engine.internal.Cascade;
-
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 
 @Data
@@ -22,11 +22,16 @@ public class User {
     public int id;
 
 
+
+    @Email
+    @NotBlank
     @Column(name="email")
     private String email;
 
+    @NotBlank
     @Column(name = "password")
     private String password;
+
 
 
 

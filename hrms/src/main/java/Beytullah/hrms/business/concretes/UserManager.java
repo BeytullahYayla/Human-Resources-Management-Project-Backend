@@ -14,6 +14,7 @@ import java.util.List;
 @Service
 public class UserManager implements UserService {
     private UserDao userDao;
+
     public UserManager(UserDao userDao) {
         this.userDao=userDao;
     }
@@ -26,9 +27,5 @@ public class UserManager implements UserService {
         return new SuccessResult("User added successfully");
     }
 
-    @Override
-    public DataResult<List<User>> listAll() {
 
-        return new  SuccessDataResult<List<User>>(this.userDao.findAll(),"Users listed successfully");
-    }
 }
