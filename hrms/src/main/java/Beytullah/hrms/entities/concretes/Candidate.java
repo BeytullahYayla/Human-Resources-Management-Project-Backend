@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-@PrimaryKeyJoinColumn(name="user_id", referencedColumnName = "id")
+@PrimaryKeyJoinColumn(name="user_id", referencedColumnName = "user_id")
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler","candidateCv"})
 public class Candidate extends User {
 

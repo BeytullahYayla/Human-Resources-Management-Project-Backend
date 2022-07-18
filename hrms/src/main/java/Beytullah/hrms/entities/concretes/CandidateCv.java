@@ -32,7 +32,7 @@ public class CandidateCv {
     @Column(name = "created_at", columnDefinition = "Date default " + "CURRENT_TIMESTAMP")
     private final LocalDateTime createdAt = LocalDateTime.now();
 
-    
+
     @NotNull
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "candidate_id", referencedColumnName = "user_id")
