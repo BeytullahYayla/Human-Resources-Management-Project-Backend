@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CandidateCvDto {
-    private String languageName;
-    private int level;
+    private String coverLetter;
+    private String companyName;
+    //private String firstName;
+    //private String lastname;
+
 }

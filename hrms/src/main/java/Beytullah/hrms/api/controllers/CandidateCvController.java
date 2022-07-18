@@ -28,12 +28,12 @@ public class CandidateCvController {
         return this.candidateCvService.getAll();
     }
 
-    /*
+
     @GetMapping("/getDetails")
     public DataResult<List<CandidateCvDto>> getDetails(){
         return this.candidateCvService.getDetails();
     }
-    */
+
 
 
     @PostMapping("/addCandidateCv")

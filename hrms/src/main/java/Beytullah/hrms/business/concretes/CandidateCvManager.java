@@ -29,6 +29,11 @@ public class CandidateCvManager implements CandidateCvService {
         return new SuccessDataResult<List<CandidateCv>>(this.candidateCvDao.findAll(),"Data Listed Successfully");
     }
 
+    @Override
+    public DataResult<List<CandidateCvDto>> getDetails() {
+        return new SuccessDataResult<List<CandidateCvDto>>(this.candidateCvDao.getCandidateCvDetails(),"Details Listed");
+    }
+
     /*
     @Override
     public DataResult<List<CandidateCvDto>> getDetails() {

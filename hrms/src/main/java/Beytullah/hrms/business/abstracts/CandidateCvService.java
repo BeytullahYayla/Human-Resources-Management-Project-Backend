@@ -10,6 +10,6 @@ import java.util.List;
 public interface CandidateCvService {
     DataResult<List<CandidateCv>> getAll();
 
-    //DataResult<List<CandidateCvDto>> getDetails();
+    DataResult<List<CandidateCvDto>> getDetails();
     Result add(CandidateCv candidateCv);
 }
