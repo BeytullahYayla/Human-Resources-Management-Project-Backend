@@ -6,7 +6,7 @@ import Beytullah.hrms.core.utilities.results.Result;
 import Beytullah.hrms.core.utilities.results.SuccessDataResult;
 import Beytullah.hrms.core.utilities.results.SuccessResult;
 import Beytullah.hrms.dataAccess.abstracts.ForeignLanguageDao;
-import Beytullah.hrms.entities.concretes.ForeignLanguage;
+import Beytullah.hrms.entities.concretes.Language;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,12 +20,12 @@ public class ForeignLanguageManager implements ForeignLanguageService {
     }
 
     @Override
-    public DataResult<List<ForeignLanguage>> listAll() {
-        return new SuccessDataResult<List<ForeignLanguage>>(this.foreignLanguageDao.findAll(),"ListedSuccessfully");
+    public DataResult<List<Language>> listAll() {
+        return new SuccessDataResult<List<Language>>(this.foreignLanguageDao.findAll(),"ListedSuccessfully");
     }
 
     @Override
-    public Result add(ForeignLanguage foreignLanguage) {
+    public Result add(Language foreignLanguage) {
         this.foreignLanguageDao.save(foreignLanguage);
         return new SuccessResult("Added Successfully");
     }

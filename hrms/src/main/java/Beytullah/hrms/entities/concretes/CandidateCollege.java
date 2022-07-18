@@ -5,32 +5,46 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+import java.time.LocalDate;
 
 @Data
 @Entity
-@NoArgsConstructor
+@Table(name = "candidate_cv_educations")
 @AllArgsConstructor
-@Table(name = "candidate_colleges")
+@NoArgsConstructor
 public class CandidateCollege {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "candidate_college_id")
-    private int candidateCollegeId;
+    @Column(name = "id")
+    private int id;
 
-    @Column(name = "college_name")
-    private String collegeName;
+    @NotNull
+    @NotBlank
+    @Size(max = 100)
+    @Column(name = "school_name")
+    private String schoolName;
 
-    @Column(name = "college_department")
-    private String collegeDepartment;
+    @NotNull
+    @NotBlank
+    @Size(max = 100)
+    @Column(name = "department_name")
+    private String departmentName;
 
-    @Column(name = "starting_year")
-    private int startingYear;
+    @NotNull
+    @Past
+    @Column(name = "starting_date")
+    private LocalDate startingDate;
 
-    @Column(name = "ending_year")
-    private int endingYear;
+    @Past
+    @Column(name = "date_of_graduation")
+    private LocalDate dateOfGraduation;
 
-    @Column(name = "graduation_year")
-    private int graduationYear;
+    @ManyToOne()
+    @JoinColumn(name = "candidate_cv_id")
+    private CandidateCv candidateCv;
 
 }

@@ -5,32 +5,36 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Data
 @Entity
-@NoArgsConstructor
+@Table(name = "candidate_cv_languages")
 @AllArgsConstructor
-@Table(name = "candidate_foreign_languages")
+@NoArgsConstructor
 public class CandidateForeignLanguage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "candidate_foreign_lang_id")
-    private int candidateForeignLangId;
+    @Column(name = "id")
+    private int id;
 
+    @NotNull
+    @Min(1)
+    @Max(5)
     @Column(name = "level")
     private int level;
 
+    @NotNull
     @ManyToOne()
-            @JoinColumn(name = "candidate_cv_id")
-    CandidateCv candidateCv;
+    @JoinColumn(name = "candidate_cv_id")
+    private CandidateCv candidateCv;
 
+    @NotNull
     @ManyToOne()
-            @JoinColumn(name = "foreign_lang_id")
-    ForeignLanguage foreignLanguage;
-
-
-
-
+    @JoinColumn(name = "language_id")
+    private Language language;
 
 }

@@ -1,13 +1,11 @@
 package Beytullah.hrms.api.controllers;
 
 import Beytullah.hrms.business.abstracts.ForeignLanguageService;
-import Beytullah.hrms.business.concretes.ForeignLanguageManager;
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.Result;
-import Beytullah.hrms.entities.concretes.ForeignLanguage;
+import Beytullah.hrms.entities.concretes.Language;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.crypto.Data;
 import java.util.List;
 
 @RestController
@@ -19,9 +17,9 @@ public class LanguageController {
     }
 
     @GetMapping("/getAll")
-    public DataResult<List<ForeignLanguage>> getAll(){
+    public DataResult<List<Language>> getAll(){
         return this.foreignLanguageService.listAll();
     }
     @PostMapping("/add")
-    public Result add(@RequestBody ForeignLanguage foreignLanguage){return this.foreignLanguageService.add(foreignLanguage);}
+    public Result add(@RequestBody Language foreignLanguage){return this.foreignLanguageService.add(foreignLanguage);}
 }
