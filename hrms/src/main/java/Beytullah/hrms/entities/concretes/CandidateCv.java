@@ -28,10 +28,11 @@ public class CandidateCv {
     @Column(name = "cover_letter")
     private String coverLetter;
 
+    /*
     @PastOrPresent
     @Column(name = "created_at", columnDefinition = "Date default " + "CURRENT_TIMESTAMP")
     private final LocalDateTime createdAt = LocalDateTime.now();
-
+*/
 
     @NotNull
     @OneToOne(fetch = FetchType.LAZY)

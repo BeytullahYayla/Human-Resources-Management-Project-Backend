@@ -32,4 +32,9 @@ public class CandidateCollegeManager implements CandidateCollegeService {
         this.candidateCollegeDao.save(candidateCollege);
         return new SuccessResult("Candidate College Added Successfully");
     }
+
+    @Override
+    public DataResult<List<CandidateCollege>> getByCandidateCvId(int candidateCvId) {
+        return new SuccessDataResult<List<CandidateCollege>>(this.candidateCollegeDao.getByCandidateCv_Id(candidateCvId));
+    }
 }

@@ -10,4 +10,6 @@ import java.util.List;
 public interface CandidateCollegeService {
     DataResult<List<CandidateCollege>> getAll();
     Result add(CandidateCollege candidateCollege);
+
+    DataResult<List<CandidateCollege>> getByCandidateCvId(int candidateCvId);
 }

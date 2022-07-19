@@ -1,8 +1,11 @@
 package Beytullah.hrms.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -10,6 +13,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 @Data
 @Entity
@@ -17,6 +23,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CandidateCollege {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -37,11 +45,11 @@ public class CandidateCollege {
     @NotNull
     @Past
     @Column(name = "starting_date")
-    private LocalDate startingDate;
+    private Date startingDate;
 
     @Past
     @Column(name = "date_of_graduation")
-    private LocalDate dateOfGraduation;
+    private Date dateOfGraduation;
 
     @ManyToOne()
     @JoinColumn(name = "candidate_cv_id")

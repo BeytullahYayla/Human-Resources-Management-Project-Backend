@@ -34,11 +34,12 @@ public class Candidate extends User {
     @Column(name = "last_name")
     private String lastName;
 
+    /*
     @NotNull
     @Past
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
-
+*/
     @OneToOne(mappedBy = "candidate")
     private CandidateCv candidateCv;
 }
