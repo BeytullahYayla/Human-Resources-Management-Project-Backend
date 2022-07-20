@@ -35,6 +35,6 @@ public class CandidateCollegeManager implements CandidateCollegeService {
 
     @Override
     public DataResult<List<CandidateCollege>> getByCandidateCvId(int candidateCvId) {
-        return new SuccessDataResult<List<CandidateCollege>>(this.candidateCollegeDao.getByCandidateCv_Id(candidateCvId));
+        return new SuccessDataResult<List<CandidateCollege>>(this.candidateCollegeDao.getByCandidateCv_Id(candidateCvId),"Candidate Colleges Listed By Graduation Year Successfully!!");
     }
 }

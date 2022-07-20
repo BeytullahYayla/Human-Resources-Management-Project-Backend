@@ -31,20 +31,21 @@ public class CandidateExperience {
 
     @NotNull
     @Past
-    @Column(name = "starting_date")
-    private LocalDate startingDate;
+    @Column(name = "starting_year")
+    private int startingYear;
 
     @Past
-    @Column(name = "quit_date")
-    private LocalDate quitDate;
+    @Column(name = "quit_year")
+    private int quitYear;
+
+    @NotNull
+    @Column(name = "position_name")
+    private String positionName;
 
     @NotNull
     @ManyToOne()
     @JoinColumn(name = "candidate_cv_id")
     private CandidateCv candidateCv;
 
-    @NotNull
-    @ManyToOne()
-    @JoinColumn(name = "job_id")
-    private Job job;
+
 }
