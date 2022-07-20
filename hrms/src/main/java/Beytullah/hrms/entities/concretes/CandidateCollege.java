@@ -44,12 +44,12 @@ public class CandidateCollege {
 
     @NotNull
     @Past
-    @Column(name = "starting_date")
-    private Date startingDate;
+    @Column(name = "starting_year")
+    private int startingYear;
 
     @Past
-    @Column(name = "date_of_graduation")
-    private Date dateOfGraduation;
+    @Column(name = "graduation_year")
+    private int graduationYear;
 
     @ManyToOne()
     @JoinColumn(name = "candidate_cv_id")
