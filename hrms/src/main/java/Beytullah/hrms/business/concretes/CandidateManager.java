@@ -1,15 +1,14 @@
 package Beytullah.hrms.business.concretes;
 
 import Beytullah.hrms.business.abstracts.CandidateService;
-import Beytullah.hrms.core.utilities.results.DataResult;
-import Beytullah.hrms.core.utilities.results.Result;
-import Beytullah.hrms.core.utilities.results.SuccessDataResult;
-import Beytullah.hrms.core.utilities.results.SuccessResult;
+import Beytullah.hrms.core.utilities.results.*;
 import Beytullah.hrms.dataAccess.abstracts.CandidateDao;
 import Beytullah.hrms.entities.concretes.Candidate;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CandidateManager implements CandidateService {
     private CandidateDao candidateDao;
     public CandidateManager(CandidateDao candidateDao){
@@ -17,7 +16,7 @@ public class CandidateManager implements CandidateService {
     }
     @Override
     public DataResult<List<Candidate>> getAll() {
-        return null;
+        return new SuccessDataResult<List<Candidate>>(this.candidateDao.findAll(),"Candidates Listed Successfully");
     }
 
     @Override
@@ -27,26 +26,39 @@ public class CandidateManager implements CandidateService {
 
     @Override
     public DataResult<Candidate> getByNationalIdentity(String nationalIdentity) {
-        return null;
+        return new SuccessDataResult<Candidate>(this.candidateDao.getByNationalIdentity(nationalIdentity));
     }
 
     @Override
     public DataResult<Candidate> getByEmail(String email) {
-        return null;
+        return new SuccessDataResult<Candidate>(this.candidateDao.getByEmail(email));
     }
 
     @Override
     public Result add(Candidate candidate) {
-        return null;
+        this.candidateDao.save(candidate);
+        return new SuccessResult("Candidate Added Successfully");
     }
 
     @Override
     public Result update(Candidate candidate) {
-        return null;
+        if(ifCandidateExistsById(candidate.getId())){
+
+            this.candidateDao.save(candidate);
+            return new SuccessResult("Candidate Updated Successfully");
+        }
+        return new ErrorResult("Candidate Couldn't Found at Database");
     }
 
     @Override
     public Result delete(Candidate candidate) {
-        return null;
+        return new SuccessResult("Candidate Deleted Successfully");
+    }
+
+    private boolean ifCandidateExistsById(int candidateId){
+
+
+        //If there is a candidate that has candidateId return true
+        return this.candidateDao.existsById(candidateId)?true:false;
     }
 }

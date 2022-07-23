@@ -8,6 +8,8 @@ import Beytullah.hrms.dataAccess.abstracts.CandidateCvExperienceDao;
 import Beytullah.hrms.entities.concretes.CandidateExperience;
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.Null;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -28,6 +30,11 @@ public class CandidateCvExperienceManager implements Beytullah.hrms.business.abs
 
     @Override
     public Result add(CandidateExperience candidateExperience) {
+
+
+
+
+
         this.candidateCvExperienceDao.save(candidateExperience);
         return new SuccessResult("Candidate Experience Added Successfully");
     }
