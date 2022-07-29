@@ -15,9 +15,9 @@ public class CloudinaryAdapter implements ImageService{
     private final Cloudinary cloudinary;
     public CloudinaryAdapter() {
         Map<String, String> valuesMap = new HashMap<String,String>();
-        valuesMap.put("cloud_name", "*****");
-        valuesMap.put("api_key", "*****");
-        valuesMap.put("api_secret", "*****");
+        valuesMap.put("cloud_name", "drmozybpu");
+        valuesMap.put("api_key", "341386154697815");
+        valuesMap.put("api_secret", "A39I2GySWwbEG9tvnbjHPzoQors");
         cloudinary = new Cloudinary(valuesMap);
     }
     @SuppressWarnings({"unchecked"})

@@ -18,12 +18,17 @@ import java.util.List;
 
 @Service
 @NoArgsConstructor
-@AllArgsConstructor
 public class CandidateImageManager implements CandidateImagesService{
 
     private CandidateCvImageDao candidateCvImageDao;
     private ImageService imageService;
     private CandidateService candidateService;
+
+    public CandidateImageManager(CandidateCvImageDao candidateCvImageDao,ImageService imageService,CandidateService candidateService){
+        this.candidateCvImageDao=candidateCvImageDao;
+        this.imageService=imageService;
+        this.candidateService=candidateService;
+    }
 
 
 
