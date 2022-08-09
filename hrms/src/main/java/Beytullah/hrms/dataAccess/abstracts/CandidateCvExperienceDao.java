@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface CandidateCvExperienceDao extends JpaRepository<CandidateExperience,Integer> {
 
-    public List<CandidateExperience> getByCandidateCv_IdOrderByQuitYearDesc(int candidateCvId);
+   // public List<CandidateExperience> getByCandidateCv_IdOrderByEndYearDesc(int candidateId);
 
 }

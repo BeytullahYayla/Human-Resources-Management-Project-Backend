@@ -1,10 +1,11 @@
 package Beytullah.hrms.api.controllers;
 
 import Beytullah.hrms.business.abstracts.UserService;
-import Beytullah.hrms.core.entities.User;
+
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.ErrorDataResult;
 import Beytullah.hrms.core.utilities.results.Result;
+import Beytullah.hrms.entities.concretes.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

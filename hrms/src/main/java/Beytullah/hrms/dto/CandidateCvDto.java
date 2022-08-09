@@ -11,8 +11,11 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CandidateCvDto {
-    private String coverLetter;
-    private String companyName;
+    private String email;
+    private String firstName;
+    private String lastName;
+    private String nationalityNumber;
+    private int yearOfBirth;
 
 
     //private String firstName;

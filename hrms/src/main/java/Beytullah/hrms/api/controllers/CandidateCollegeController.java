@@ -26,9 +26,12 @@ public class CandidateCollegeController {
     public Result add(@RequestBody CandidateCollege candidateCollege){
         return this.candidateCollegeService.add(candidateCollege);
     }
+    /*
     @GetMapping("/getByCvId")
     public DataResult<List<CandidateCollege>> getByCvId(@RequestParam int candidateCvId){
         return this.candidateCollegeService.getByCandidateCvId(candidateCvId);
     }
+
+     */
 
 }

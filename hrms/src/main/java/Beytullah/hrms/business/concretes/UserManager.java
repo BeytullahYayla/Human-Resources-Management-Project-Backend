@@ -1,12 +1,13 @@
 package Beytullah.hrms.business.concretes;
 
 import Beytullah.hrms.business.abstracts.UserService;
-import Beytullah.hrms.core.dataAccess.UserDao;
-import Beytullah.hrms.core.entities.User;
+
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.Result;
 import Beytullah.hrms.core.utilities.results.SuccessDataResult;
 import Beytullah.hrms.core.utilities.results.SuccessResult;
+import Beytullah.hrms.dataAccess.abstracts.UserDao;
+import Beytullah.hrms.entities.concretes.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,10 +1,13 @@
 package Beytullah.hrms.entities.concretes;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "employers")
+@CrossOrigin
 public class Employer {
 
 

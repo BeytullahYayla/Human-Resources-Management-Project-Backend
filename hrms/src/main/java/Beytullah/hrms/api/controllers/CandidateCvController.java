@@ -1,12 +1,10 @@
 package Beytullah.hrms.api.controllers;
 
 import Beytullah.hrms.business.abstracts.CandidateCvService;
-import Beytullah.hrms.business.abstracts.CandidateForeignLanguageService;
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.Result;
 import Beytullah.hrms.dto.CandidateCvDto;
-import Beytullah.hrms.entities.concretes.CandidateCv;
-import Beytullah.hrms.entities.concretes.CandidateForeignLanguage;
+import Beytullah.hrms.entities.concretes.Candidate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +22,7 @@ public class CandidateCvController {
     }
 
     @GetMapping("/getAll")
-    public DataResult<List<CandidateCv>> getAll(){
+    public DataResult<List<Candidate>> getAll(){
         return this.candidateCvService.getAll();
     }
 
@@ -37,7 +35,7 @@ public class CandidateCvController {
 
 
     @PostMapping("/addCandidateCv")
-    public Result add(@Valid @RequestBody CandidateCv candidateCv){
+    public Result add(@Valid @RequestBody Candidate candidateCv){
         return this.candidateCvService.add(candidateCv);
     }
 }

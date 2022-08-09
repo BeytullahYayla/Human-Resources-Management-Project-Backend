@@ -1,26 +1,25 @@
 package Beytullah.hrms.entities.concretes;
 
+import javax.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="languages")
-public class CandidateForeignLanguage {
+@Table(name="talents")
+public class Talent {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Column(name = "name")
+    @Column(name= "name")
     private String name;
-    @Column(name= "level")
-    private int level;
 
     @ManyToOne()
     @JoinColumn(name = "candidate_id")

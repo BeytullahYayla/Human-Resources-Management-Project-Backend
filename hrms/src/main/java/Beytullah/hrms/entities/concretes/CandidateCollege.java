@@ -1,58 +1,35 @@
 package Beytullah.hrms.entities.concretes;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
-@Data
 @Entity
-@Table(name = "candidate_cv_educations")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name="schools")
 public class CandidateCollege {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @NotNull
-    @NotBlank
-    @Size(max = 100)
-    @Column(name = "school_name")
-    private String schoolName;
+    @Column(name="name")
+    private  String name;
 
-    @NotNull
-    @NotBlank
-    @Size(max = 100)
-    @Column(name = "department_name")
-    private String departmentName;
+    @Column(name = "episode")
+    private String episode;
 
-    @NotNull
-    @Past
-    @Column(name = "starting_year")
-    private int startingYear;
-
-    @Past
-    @Column(name = "graduation_year")
-    private int graduationYear;
+    @Column(name = "year_of_graduation")
+    private String yearOfGraduation;
 
     @ManyToOne()
-    @JoinColumn(name = "candidate_cv_id")
-    private CandidateCv candidateCv;
+    @JoinColumn(name = "candidate_id")
+    private Candidate candidate;
+
+
 
 }

@@ -23,10 +23,13 @@ public class CandidateCvExperienceController {
 
 
 
+    /*
     @GetMapping("/getByQuitYear")
     public DataResult<List<CandidateExperience>> getByQuitYear(@RequestParam int candidateCvId){
         return this.candidateCvExperienceService.getByCandidateCvQuitYear(candidateCvId);
     }
+
+     */
 
 
     @PostMapping("/add")

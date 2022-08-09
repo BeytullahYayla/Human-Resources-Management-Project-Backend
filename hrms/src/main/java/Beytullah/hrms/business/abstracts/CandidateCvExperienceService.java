@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface CandidateCvExperienceService {
     DataResult<List<CandidateExperience>> getAll();
-    DataResult<List<CandidateExperience>> getByCandidateCvQuitYear(int candidateCvId);
+    //DataResult<List<CandidateExperience>> getByCandidateCvQuitYear(int candidateCvId);
     Result add(CandidateExperience candidateExperience);
 }
