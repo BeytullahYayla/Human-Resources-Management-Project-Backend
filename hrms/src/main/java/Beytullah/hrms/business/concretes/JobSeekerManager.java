@@ -2,6 +2,7 @@ package Beytullah.hrms.business.concretes;
 
 import java.util.List;
 
+import Beytullah.hrms.entities.concretes.JobSeeker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,6 @@ import Beytullah.hrms.core.utilities.results.Result;
 import Beytullah.hrms.core.utilities.results.SuccessDataResult;
 import Beytullah.hrms.core.utilities.results.SuccessResult;
 import Beytullah.hrms.dataAccess.abstracts.JobSeekersDao;
-import Beytullah.hrms.entities.concretes.JobSeeker;
 
 @Service
 public class JobSeekerManager implements JobSeekerService {
@@ -32,7 +32,7 @@ public class JobSeekerManager implements JobSeekerService {
 
 	@Override
 	public Result add(JobSeeker jobSeeker) {
-		if(checkIfIdentityNumberExists(jobSeeker.getNationalIdentityNo())|| checkIfEmailExists(jobSeeker.getEmail())) {
+		if(checkIfIdentityNumberExists(jobSeeker.getIdentityNo())|| checkIfEmailExists(jobSeeker.getEmail())) {
 			return new ErrorResult("Identity Number or Email Already Exists....\n Please Try Again");
 		}
 		this.jobSeekersDao.save(jobSeeker);

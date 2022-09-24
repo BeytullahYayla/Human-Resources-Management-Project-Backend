@@ -4,7 +4,7 @@ import Beytullah.hrms.business.abstracts.CandidateCvService;
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.Result;
 import Beytullah.hrms.dto.CandidateCvDto;
-import Beytullah.hrms.entities.concretes.Candidate;
+import Beytullah.hrms.entities.concretes.CurriculumVitae;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +22,7 @@ public class CandidateCvController {
     }
 
     @GetMapping("/getAll")
-    public DataResult<List<Candidate>> getAll(){
+    public DataResult<List<CurriculumVitae>> getAll(){
         return this.candidateCvService.getAll();
     }
 
@@ -35,7 +35,7 @@ public class CandidateCvController {
 
 
     @PostMapping("/addCandidateCv")
-    public Result add(@Valid @RequestBody Candidate candidateCv){
+    public Result add(@Valid @RequestBody CurriculumVitae candidateCv){
         return this.candidateCvService.add(candidateCv);
     }
 }

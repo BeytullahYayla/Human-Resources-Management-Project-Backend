@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -15,25 +15,22 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="users")
 @AllArgsConstructor
 @NoArgsConstructor
-@Inheritance(strategy = InheritanceType.JOINED)
-
-public class User {
+@Table(name="social_media")
+public class SocialMedia {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="e_mail")
-	private String email;
+	@Column(name="github_address")
+	private int githubAddress;
 	
-	@Column(name="password")
-	private String password;
+	@Column(name="linkedin_address")
+	private int linkedinAddress;
 	
-	@Column(name="tel_no")
-	private int telNo;
-	
+	@OneToOne
+	@JoinColumn(name="curriculum_vitae_id")
+	private CurriculumVitae curriculumVitae;
 }

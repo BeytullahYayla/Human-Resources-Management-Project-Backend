@@ -2,12 +2,11 @@ package Beytullah.hrms.business.abstracts;
 
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.Result;
-
-import Beytullah.hrms.entities.concretes.Talent;
+import Beytullah.hrms.entities.concretes.Skill;
 
 import java.util.List;
 
 public interface CandidateCvSkillService {
-    DataResult<List<Talent>> getAll();
-    Result add(Talent candidateCvSkill);
+    DataResult<List<Skill>> getAll();
+    Result add(Skill candidateCvSkill);
 }

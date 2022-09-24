@@ -3,7 +3,7 @@ package Beytullah.hrms.api.controllers;
 import Beytullah.hrms.business.abstracts.CandidateCvExperienceService;
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.Result;
-import Beytullah.hrms.entities.concretes.CandidateExperience;
+import Beytullah.hrms.entities.concretes.Experience;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,23 +17,23 @@ public class CandidateCvExperienceController {
         this.candidateCvExperienceService = candidateCvExperienceService;
     }
     @GetMapping("/getAll")
-    public DataResult<List<CandidateExperience>> getAll(){
+    public DataResult<List<Experience>> getAll(){
         return this.candidateCvExperienceService.getAll();
     }
 
 
 
-    /*
+
     @GetMapping("/getByQuitYear")
-    public DataResult<List<CandidateExperience>> getByQuitYear(@RequestParam int candidateCvId){
+    public DataResult<List<Experience>> getByQuitYear(@RequestParam int candidateCvId){
         return this.candidateCvExperienceService.getByCandidateCvQuitYear(candidateCvId);
     }
 
-     */
+
 
 
     @PostMapping("/add")
-    public Result add(@RequestBody CandidateExperience candidateExperience){
+    public Result add(@RequestBody Experience candidateExperience){
         return this.candidateCvExperienceService.add(candidateExperience);
     }
 

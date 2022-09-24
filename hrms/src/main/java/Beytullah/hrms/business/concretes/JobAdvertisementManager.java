@@ -42,6 +42,18 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     }
 
     @Override
+    public Result deleteJobAdvertisement(int jobAdvertisementId) {
+        this.jobAdvertisementDao.deleteById(jobAdvertisementId);
+        return new SuccessResult("Advertisement Deleted Successfully");
+    }
+
+    @Override
+    public Result updateJobAdvertisement(int jobAdvertisementId) {
+        //this.jobAdvertisementDao.upd
+        return null;
+    }
+
+    @Override
     public DataResult<List<JobAdvertisementDto>> getAdvertisementDtoByDate(Date date) {
         return new SuccessDataResult<List<JobAdvertisementDto>>(this.jobAdvertisementDao.getJobAdvertisementsByDate(date));
     }

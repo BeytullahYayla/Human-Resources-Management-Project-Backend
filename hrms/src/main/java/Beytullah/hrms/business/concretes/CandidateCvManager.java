@@ -7,7 +7,7 @@ import Beytullah.hrms.core.utilities.results.SuccessDataResult;
 import Beytullah.hrms.core.utilities.results.SuccessResult;
 import Beytullah.hrms.dataAccess.abstracts.CandidateCvDao;
 import Beytullah.hrms.dto.CandidateCvDto;
-import Beytullah.hrms.entities.concretes.Candidate;
+import Beytullah.hrms.entities.concretes.CurriculumVitae;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +25,8 @@ public class CandidateCvManager implements CandidateCvService {
 
 
     @Override
-    public DataResult<List<Candidate>> getAll() {
-        return new SuccessDataResult<List<Candidate>>(this.candidateCvDao.findAll(),"Data Listed Successfully");
+    public DataResult<List<CurriculumVitae>> getAll() {
+        return new SuccessDataResult<List<CurriculumVitae>>(this.candidateCvDao.findAll(),"Data Listed Successfully");
     }
 
     @Override
@@ -43,7 +43,7 @@ public class CandidateCvManager implements CandidateCvService {
 
 
     @Override
-    public Result add(Candidate candidateCv) {
+    public Result add(CurriculumVitae candidateCv) {
         this.candidateCvDao.save(candidateCv);
         return new SuccessResult("Added Successfully");
     }

@@ -6,7 +6,7 @@ import Beytullah.hrms.core.utilities.results.Result;
 import Beytullah.hrms.core.utilities.results.SuccessDataResult;
 import Beytullah.hrms.core.utilities.results.SuccessResult;
 import Beytullah.hrms.dataAccess.abstracts.CandidateCollegeDao;
-import Beytullah.hrms.entities.concretes.CandidateCollege;
+import Beytullah.hrms.entities.concretes.Education;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,12 +23,12 @@ public class CandidateCollegeManager implements CandidateCollegeService {
 
 
     @Override
-    public DataResult<List<CandidateCollege>> getAll() {
-        return new SuccessDataResult<List<CandidateCollege>>(this.candidateCollegeDao.findAll(),"Candidate Colleges Listed");
+    public DataResult<List<Education>> getAll() {
+        return new SuccessDataResult<List<Education>>(this.candidateCollegeDao.findAll(),"Candidate Colleges Listed");
     }
 
     @Override
-    public Result add(CandidateCollege candidateCollege) {
+    public Result add(Education candidateCollege) {
         this.candidateCollegeDao.save(candidateCollege);
         return new SuccessResult("Candidate College Added Successfully");
     }

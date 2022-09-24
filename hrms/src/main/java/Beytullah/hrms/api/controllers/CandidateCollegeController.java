@@ -3,7 +3,7 @@ package Beytullah.hrms.api.controllers;
 import Beytullah.hrms.business.abstracts.CandidateCollegeService;
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.Result;
-import Beytullah.hrms.entities.concretes.CandidateCollege;
+import Beytullah.hrms.entities.concretes.Education;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,11 +19,11 @@ public class CandidateCollegeController {
     }
 
     @GetMapping("/getAll")
-    public DataResult<List<CandidateCollege>> getAll(){
+    public DataResult<List<Education>> getAll(){
         return this.candidateCollegeService.getAll();
     }
     @PostMapping("/add")
-    public Result add(@RequestBody CandidateCollege candidateCollege){
+    public Result add(@RequestBody Education candidateCollege){
         return this.candidateCollegeService.add(candidateCollege);
     }
     /*

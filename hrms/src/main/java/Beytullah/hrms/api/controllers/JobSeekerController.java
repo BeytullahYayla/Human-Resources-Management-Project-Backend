@@ -2,6 +2,7 @@ package Beytullah.hrms.api.controllers;
 
 import java.util.List;
 
+import Beytullah.hrms.entities.concretes.JobSeeker;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import Beytullah.hrms.business.abstracts.JobSeekerService;
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.Result;
-import Beytullah.hrms.entities.concretes.JobSeeker;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController

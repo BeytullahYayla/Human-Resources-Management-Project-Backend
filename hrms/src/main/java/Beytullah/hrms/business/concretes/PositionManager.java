@@ -4,12 +4,12 @@ import java.util.List;
 
 
 import Beytullah.hrms.core.utilities.results.*;
+import Beytullah.hrms.entities.concretes.Position;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import Beytullah.hrms.business.abstracts.PositionService;
 import Beytullah.hrms.dataAccess.abstracts.PositionsDao;
-import Beytullah.hrms.entities.concretes.Position;
 
 @Service
 public class PositionManager implements PositionService {
@@ -47,7 +47,7 @@ public class PositionManager implements PositionService {
 
 
 	private boolean checkIfPositionNameExists(Position position){
-		if (positionsDao.findByPositionName(position.getPositionName())!=null) {
+		if (positionsDao.findByPositionName(position.getJobTitle())!=null) {
 			return true;
 
 

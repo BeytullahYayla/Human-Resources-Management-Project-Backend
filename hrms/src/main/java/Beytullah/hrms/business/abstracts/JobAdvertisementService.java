@@ -13,10 +13,15 @@ public interface JobAdvertisementService {
     Result add(JobAdvertisement jobAdvertisement);
     DataResult<List<JobAdvertisementDto>> getAdvertisementDto();
 
+    Result deleteJobAdvertisement(int jobAdvertisementId);
+
+    Result updateJobAdvertisement(int jobAdvertisementId);
+
     DataResult<List<JobAdvertisementDto>> getAdvertisementDtoByDate(Date date);
     DataResult<List<JobAdvertisementDto>> getAdvertisementDtoByCompanyName(String companyName);
 
     DataResult<List<JobAdvertisementDto>> getActiveAdvertisements();
 
     Result changeIsActive(int id);
+
 }

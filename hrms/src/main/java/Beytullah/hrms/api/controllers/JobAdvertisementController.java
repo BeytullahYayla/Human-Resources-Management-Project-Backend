@@ -59,6 +59,10 @@ public class JobAdvertisementController {
         return this.jobAdvertisementService.changeIsActive(id);
 
     }
+    @DeleteMapping("/deleteAdvertisement")
+    public Result deleteAdvertisement(@RequestParam int jobAdvertisementId){
+        return this.jobAdvertisementService.deleteJobAdvertisement(jobAdvertisementId);
+    }
 
 
 }

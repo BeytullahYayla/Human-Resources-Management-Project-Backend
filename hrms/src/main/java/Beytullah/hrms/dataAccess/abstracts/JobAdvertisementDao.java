@@ -37,4 +37,6 @@ public interface JobAdvertisementDao extends JpaRepository<JobAdvertisement,Inte
 
 
 
+
+
 }

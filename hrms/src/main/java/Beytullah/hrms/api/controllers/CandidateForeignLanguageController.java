@@ -3,7 +3,7 @@ package Beytullah.hrms.api.controllers;
 import Beytullah.hrms.business.abstracts.CandidateForeignLanguageService;
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.Result;
-import Beytullah.hrms.entities.concretes.CandidateForeignLanguage;
+import Beytullah.hrms.entities.concretes.Language;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,11 +21,11 @@ public class CandidateForeignLanguageController {
     }
 
     @GetMapping("/getAll")
-    public DataResult<List<CandidateForeignLanguage>> getAll(){
+    public DataResult<List<Language>> getAll(){
        return this.candidateForeignLanguageService.getAll();
     }
     @PostMapping("/add")
-    public Result add(@Valid @RequestBody CandidateForeignLanguage candidateForeignLanguage){
+    public Result add(@Valid @RequestBody Language candidateForeignLanguage){
         return this.candidateForeignLanguageService.add(candidateForeignLanguage);
     }
 }

@@ -1,160 +1,60 @@
 package Beytullah.hrms.entities.concretes;
 
-import com.sun.istack.NotNull;
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
-import javax.persistence.*;
-import java.util.Date;
-
-@Entity
-@Table(name = "job_advertisement")
 @Data
+@Entity
+@Table(name="job_postings")
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@CrossOrigin
+
 public class JobAdvertisement {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotNull
-    @Column(name = "job_advertisement_id")
-    private int jobAdvertisementId;
-
-
-    @ManyToOne
-    @NotNull
-    @JoinColumn(name = "employer_id")
-    private Employer employer;
-
-
-
-    @Column(name = "job_description")
-    @NotNull
-    private String jobDescription;
-
-
-
-    @ManyToOne
-    @NotNull
-    @JoinColumn(name = "position_id")
-    private Position position;
-
-
-
-
-    @Column(name = "min_salary")
-    @NotNull
-    private double minSalary;
-
-    @Column(name = "max_salary")
-    @NotNull
-    private double maxSalary;
-
-    @Column(name="required_position_count")
-    @NotNull
-    private int requiredPositionCount;
-
-
-
-    @Column(name="created_at")
-    @NotNull
-    private Date createdAt;
-
-
-
-
-    @Column(name="application_deadline")
-    @NotNull
-    private Date applicationDeadline;
-
-
-
-    @Column(name="is_active")
-    @NotNull
-    private boolean isActive;
-    /*
-
-    public boolean isActive() {
-        return isActive;
-    }
-
-    public void setActive(boolean active) {
-        isActive = active;
-    }
-
-    public double getMinSalary() {
-        return minSalary;
-    }
-
-    public void setMinSalary(double minSalary) {
-        this.minSalary = minSalary;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-    public int getJobAdvertisementId() {
-        return jobAdvertisementId;
-    }
-
-    public void setJobAdvertisementId(int jobAdvertisementId) {
-        this.jobAdvertisementId = jobAdvertisementId;
-    }
-
-
-
-    public int getRequiredPositionCount() {
-        return requiredPositionCount;
-    }
-
-    public void setRequiredPositionCount(int requiredPositionCount) {
-        this.requiredPositionCount = requiredPositionCount;
-    }
-    public String getJobDescription() {
-        return jobDescription;
-    }
-
-    public void setJobDescription(String jobDescription) {
-        this.jobDescription = jobDescription;
-    }
-
-    public Date getApplicationDeadline() {
-        return applicationDeadline;
-    }
-
-    public void setApplicationDeadline(Date applicationDeadline) {
-        this.applicationDeadline = applicationDeadline;
-    }
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
-    }
-
-    public double getMaxSalary() {
-        return maxSalary;
-    }
-
-    public void setMaxSalary(double maxSalary) {
-        this.maxSalary = maxSalary;
-    }
-    public Employer getEmployer() {
-        return employer;
-    }
-
-    public void setEmployer(Employer employer) {
-        this.employer = employer;
-    }
-*/
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
+	@Column(name="job_posting_id")
+	private int jobPostingId;
+	
+	@Column(name="description")
+	private String description;
+	
+	@Column(name="open_position")
+	private int openPositions;
+	
+	@Column(name="deadline")
+	private LocalDateTime deadline;
+	
+	@Column(name="max_salary")
+	private double maxSalary;
+	
+	@Column(name="min_salary")
+	private double minSalary;
+	
+	@Column(name="is_active")
+	private boolean isActive;
+	
+	@ManyToOne()
+	@JoinColumn(name = "employer_id")
+	private Employer employer;
+	
+    @ManyToOne()
+    @JoinColumn(name = "city_id")
+	private City city;
+    
+	@ManyToOne()
+	@JoinColumn(name = "job_position_id")
+	private JobPosition jobPosition;
 }

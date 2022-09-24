@@ -3,9 +3,7 @@ package Beytullah.hrms.api.controllers;
 import Beytullah.hrms.business.abstracts.CandidateCvSkillService;
 import Beytullah.hrms.core.utilities.results.DataResult;
 import Beytullah.hrms.core.utilities.results.Result;
-import Beytullah.hrms.core.utilities.results.SuccessDataResult;
-import Beytullah.hrms.entities.concretes.Candidate;
-import Beytullah.hrms.entities.concretes.Talent;
+import Beytullah.hrms.entities.concretes.Skill;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,12 +16,12 @@ public class CandidateCvSkillController {
         this.candidateCvSkillService=candidateCvSkillService;
     }
     @GetMapping("/getAll")
-    public DataResult<List<Talent>> getAll(){
+    public DataResult<List<Skill>> getAll(){
         return this.candidateCvSkillService.getAll();
     }
 
     @PostMapping("/add")
-    public Result add(@RequestBody Talent candidateCvSkill){
+    public Result add(@RequestBody Skill candidateCvSkill){
         return this.candidateCvSkillService.add(candidateCvSkill);
     }
 }
